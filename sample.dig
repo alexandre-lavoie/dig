@@ -1,0 +1,41 @@
+Inverts a 32 or less letter word. (Currently crashes due to no size indicator for inventory)
+
+@author Alexandre Lavoie
+
+Get word
+/say in
+
+Set region spawns
+/spawnpoint abs 1
+/warp storage
+/spawnpoint abs D0
+
+Get every letter in inventory
+/nametag $loop
+/warp io
+/mine
+/spawnpoint rel 1
+/warp storage
+/place
+/mine
+/mine
+/move abs CF
+/place
+/tp z $exit
+/clear storage
+/tp $loop
+
+Reset IO
+/nametag $exit
+/warp io
+/move abs 0
+/place
+/spawnpoint rel 0
+
+Place letter in inventory and print till exception
+/nametag $print
+/warp io
+/place
+/spawnpoint rel 1
+/say out
+/tp $print
